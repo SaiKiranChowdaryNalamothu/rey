@@ -48,6 +48,11 @@
        text-align:center;
       }
 
+
+      body
+      {
+      }
+
     </style>
 
 
@@ -55,7 +60,19 @@
 
 
   </head>
-  <body>
+  <body id="body">
+
+
+    <header style='background-color:grey;font-size:15px;display:inline-block' >
+        Select background color :
+        <select id="select1" onchange="fun1();" name="select1" autocomplete="off">
+          <option value="white">White</option>
+          <option value="red">Red</option>
+          <option value="black">Black</option>
+          <option value="orange">Orange</option>
+          <option value="yellow">Yellow</option>
+        </select>
+    </header>
 
 <marquee direction="right"  behavior="alternate" scrollamount="2">
 <marquee direction="down" behavior="alternate" scrollamount="3">Chandu Tanu</marquee> <br>
@@ -98,9 +115,32 @@ function sub()
   document.getElementById("p1").innerHTML="subtraction : "+c;
 }
 
+function fun1()
+{
+  var a=document.getElementById("select1");
+  var c=document.getElementById("body");
+  var b=a.value;
+
+  switch(b)
+  {
+    case "white": c.style.background="white";
+                break;
+    case "orange": c.style.background="orange";
+                break;
+    case "black": c.style.background="black";
+                break;
+    case "red": c.style.background="red";
+                break;
+    case "yellow": c.style.background="yellow";
+                break;
+
+  }
+
+}
 
 </script>
 
 
-  </body>
+
+    </body>
 </html>
