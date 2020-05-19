@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Tanu Chandu</title>
     <meta name="viewport" content="width=device-width">
-    <meta http-equiv="refresh" content="5">
+  <!--  <meta http-equiv="refresh" content="5">  -->
 
     <style media="screen">
       h1
@@ -75,8 +75,8 @@
         </select>
     </header>
 
-  <p id="online" style="display:inline"></p>
-      <p id="date" style=" float : right;margin:0% 1%;background:grey;color:white;display:inline"></p>
+  <p id="online" style="display:inline;margin-left: 10px; padding-right: 4px;background-color:orange"></p>
+      <p id="date" style=" float : right;margin:0% 1%; padding-right:3px;background:grey;color:white;display:inline"></p>
 
 <marquee direction="right"  behavior="alternate" scrollamount="2">
 <marquee direction="down" behavior="alternate" scrollamount="3">Chandu Tanu</marquee> <br>
@@ -103,12 +103,20 @@
 
 <script type="text/javascript">
 
-if(navigator.onLine)
-    document.getElementById("online").innerHTML="&nbsp;&nbsp;Internet_Status : ONLINE";
-else
-    document.getElementById("online").innerHTML="&nbsp;&nbsp;Internet_Status : OFFLINE";
+setInterval(int_status,3000);
+setInterval(mydate,1000);
+function int_status()
+{
+          if(navigator.onLine)
+              document.getElementById("online").innerHTML="Internet_Status : ONLINE";
+          else
+              document.getElementById("online").innerHTML="Internet_Status : OFFLINE";
+}
 
- document.getElementById("date").innerHTML=(new Date()).toUTCString();
+function mydate()
+{
+ document.getElementById("date").innerHTML=(new Date()).toDateString() + '  ' + (new Date()).toLocaleTimeString();
+}
 
 function add()
 {
