@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Tanu Chandu</title>
     <meta name="viewport" content="width=device-width">
+    <meta http-equiv="refresh" content="5">   
 
     <style media="screen">
       h1
@@ -63,7 +64,7 @@
   <body id="body">
 
 
-    <header style='background-color:grey;font-size:15px;display:inline-block' >
+    <header style='background-color:grey;font-size:15px;float:left' >
         Select background color :
         <select id="select1" onchange="fun1();" name="select1" autocomplete="off">
           <option value="white">White</option>
@@ -73,6 +74,8 @@
           <option value="yellow">Yellow</option>
         </select>
     </header>
+      <p id="online" style="display:left"></p>
+      <p id="date" style=" float : right;margin:0% 1%;background:grey;color:white;display:inline"></p>
 
 <marquee direction="right"  behavior="alternate" scrollamount="2">
 <marquee direction="down" behavior="alternate" scrollamount="3">Chandu Tanu</marquee> <br>
@@ -99,6 +102,12 @@
 
 <script type="text/javascript">
 
+if(navigator.onLine)
+    document.getElementById("online").innerHTML="&nbsp;&nbsp;Internet_Status : ONLINE";
+else
+    document.getElementById("online").innerHTML="&nbsp;&nbsp;Internet_Status : OFFLINE";
+
+ document.getElementById("date").innerHTML=(new Date()).toUTCString();
 
 function add()
 {
